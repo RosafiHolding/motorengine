@@ -43,7 +43,7 @@ class BaseDocument(object):
 
         for key, value in kw.items():
             if key not in self._fields:
-                self._fields[key] = DynamicField(db_field="_%s" % key.lstrip('_'))
+                self._fields[key] = DynamicField(db_field="%s" % key.lstrip('_'))
             self._values[key] = value
 
     @classmethod
